@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1920, initial-scale=1.0">
+    <title>Controle de Estoque</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="main.js" defer></script>
+    <link rel="icon" href="data:,">
+</head>
+<body>
+    <header>
+        <nav class="cabecalho">
+        </nav>
+    </header>
+    <div class="container">
+        <h2>Gerenciamento de Estoque</h2>
+        <div class="botoes">
+        <button id="btn-adicionar" class="btn-adicionar">Adicionar Produto</button>
+        <button id="btn-delete" class="btn-delete">Excluir Produto</button>
+        </div>
+        <table id="tabela-estoque">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Produto</th>
+                    <th>Qtd</th>
+                    <th>Marca</th>
+                    <th>Fornecedor</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="corpo-tabela">
+                </tbody>
+        </table>
+    </div>
+    <div id="modal-produto" class="modal-add">
+    <div class="modal-content-add">
+        <span class="fechar">&times;</span>
+        <h3>Cadastrar Novo Produto</h3>
+        <form id="form-produto" class="form-produto">
+            <input type="text" id="nome" placeholder="Nome do Produto" autocomplete="off" required>
+            <input type="number" id="quantidade" placeholder="Quantidade" autocomplete="off" required>
+            <input type="text" id="marca" placeholder="Marca" autocomplete="off" required>
+            <input type="text" id="fornecedor" placeholder="Fornecedor" autocomplete="off" required>
+            <button type="submit">Salvar Produto</button>
+        </form>
+    </div>
+    </div>
+     <div id="modal-edit" class="modal-add">
+    <div class="modal-content-add">
+        <span class="fecharEdit" id="fechar-editar">&times;</span>
+        <h3>Editar Produto</h3>
+        <form class="form-editar" id="form-editar" autocomplete="off">
+            <input type="hidden" id="edit-id">
+            <input type="text" id="edit-nome" placeholder="Nome do Produto" autocomplete="off" required>
+            <input type="number" id="edit-quantidade" placeholder="Quantidade" autocomplete="off" required>
+            <input type="text" id="edit-marca" placeholder="Marca" autocomplete="off" required>
+            <input type="text" id="edit-fornecedor" placeholder="Fornecedor" autocomplete="off" required>
+            <button type="submit">Salvar Produto</button>
+        </form>
+    </div>
+    </div>
+     <div id="modal-excluir" class="modal-del">
+     <div class="modal-content-del">
+        <span class="fechar-excluir" style="cursor:pointer; text-align:right;">&times;</span>
+        <h3>Excluir Produto</h3>
+        <p>Digite o ID do produto para confirmar:</p>
+        <input type="number" id="id-excluir" placeholder="ID do Produto" autocomplete="off">
+        <button id="btn-confirmar-exclusao" style="background-color: red; color: white;">Confirmar Exclusão</button>
+</div>
+</div>
+</body>
+</html>
